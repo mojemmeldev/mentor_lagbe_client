@@ -7,7 +7,7 @@ import api from '@/lib/api';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { StatsCardSkeleton } from '@/components/ui/skeleton';
+import { StatsCardSkeleton } from '@/components/common/Skeleton';
 import { formatCurrency } from '@/lib/utils';
 import {
   Users,

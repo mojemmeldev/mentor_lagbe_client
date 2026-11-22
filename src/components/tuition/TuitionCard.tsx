@@ -14,33 +14,34 @@ import { MapPin, Calendar, ArrowRight, Bookmark, Star, BadgeCheck } from 'lucide
 export interface TuitionCardProps {
   _id: string;
   title: string;
-  subject: string;
-  classLevel: string;
-  mode: 'Online' | 'Offline';
-  location: string;
-  monthlyFee: number;
-  daysPerWeek: number;
-  bannerImage: string;
-  tutorName: string;
+  subject?: string;
+  classLevel?: string;
+  mode?: 'Online' | 'Offline' | string;
+  location?: string;
+  monthlyFee?: number;
+  daysPerWeek?: number;
+  bannerImage?: string;
+  tutorName?: string;
   tutorId?: string;
   tutorEmail?: string;
   initialBookmarked?: boolean;
   onBookmarkToggle?: (id: string, isBookmarked: boolean) => void;
   averageRating?: number;
   totalReviews?: number;
+  [key: string]: any;
 }
 
 export const TuitionCard: React.FC<TuitionCardProps> = ({
   _id,
   title,
-  subject,
-  classLevel,
-  mode,
-  location,
-  monthlyFee,
-  daysPerWeek,
-  bannerImage,
-  tutorName,
+  subject = 'General',
+  classLevel = 'All Levels',
+  mode = 'Online',
+  location = 'Dhaka',
+  monthlyFee = 0,
+  daysPerWeek = 0,
+  bannerImage = 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&q=80',
+  tutorName = 'Verified Mentor',
   tutorId,
   initialBookmarked,
   onBookmarkToggle,

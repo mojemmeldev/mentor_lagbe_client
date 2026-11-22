@@ -196,7 +196,7 @@ export default function BrowseTuitionsContent() {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {tuitions.map((t) => (
-                <TuitionCard key={t._id} tuition={t} />
+                <TuitionCard key={t._id} {...t} />
               ))}
             </div>
             {pagination.totalPages > 1 && (

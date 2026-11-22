@@ -6,7 +6,7 @@ import { formatCurrency, formatDate } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { TableRowSkeleton } from '@/components/ui/skeleton';
+import { TableRowSkeleton } from '@/components/common/Skeleton';
 import { toast } from 'sonner';
 import { Check, X, CheckSquare, Clock, CheckCircle2, XCircle } from 'lucide-react';
 

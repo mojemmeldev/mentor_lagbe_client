@@ -5,7 +5,7 @@ import api from '@/lib/api';
 import { formatDate } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { TableRowSkeleton } from '@/components/ui/skeleton';
+import { TableRowSkeleton } from '@/components/common/Skeleton';
 import { toast } from 'sonner';
 import { CreditCard, DollarSign, CheckCircle2 } from 'lucide-react';
 
