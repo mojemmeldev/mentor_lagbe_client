@@ -1,0 +1,585 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ======================================================== */
+    /* MENTORLAGBE WARM EDITORIAL DESIGN SYSTEM TOKENS          */
+    /* ======================================================== */
+    --bg-primary: #FAF8F5;
+    --bg-surface: #FFFFFF;
+    --bg-muted: #F3EFE9;
+    --text-primary: #0F2922;
+    --text-secondary: rgba(22, 58, 48, 0.78);
+    --border-subtle: rgba(15, 41, 34, 0.1);
+
+    /* HSL Tokens for Tailwind / shadcn UI compatibility */
+    --background: 36 38% 97%;          /* #FAF8F5 Warm Cream */
+    --foreground: 164 46% 11%;         /* #0F2922 Forest 900 */
+
+    --card: 0 0% 100%;                 /* #FFFFFF Warm White */
+    --card-foreground: 164 46% 11%;    /* #0F2922 Forest 900 */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 164 46% 11%;
+
+    /* Brand Primary: Base Green HSL(144, 79%, 38%) */
+    --primary: 143.6 79.5% 38.2%;      /* #14AF51 */
+    --primary-foreground: 36 38% 97%;  /* #FAF8F5 */
+    --primary-hover: 143.6 79.5% 31.2%; /* #108F42 */
+
+    /* Brand Secondary: Green #14AF51 (legacy accent #E05A47 kept for token tests) */
+    --secondary: 143.6 79.5% 38.2%;    /* #14AF51 */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 38 24% 94%;               /* #F3EFE9 */
+    --muted-foreground: 163 35% 32%;
+
+    /* Accent: Green #14AF51 */
+    --accent: 143.6 79.5% 38.2%;       /* #14AF51 */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 164 25% 88%;
+    --input: 164 25% 88%;
+    --ring: 143.6 79.5% 38.2%;
+
+    --radius: 1rem;
+  }
+
+  .dark,
+  html.dark {
+    --bg-primary: #081612;
+    --bg-surface: #0F241E;
+    --bg-muted: #153028;
+    --text-primary: #F5F2EB;
+    --text-secondary: rgba(245, 242, 235, 0.75);
+    --border-subtle: rgba(250, 248, 245, 0.12);
+
+    --background: 163 47% 6%;          /* #081612 Dark Primary */
+    --foreground: 42 33% 94%;          /* #F5F2EB Warm Light Text */
+
+    --card: 163 41% 10%;               /* #0F241E Dark Surface */
+    --card-foreground: 42 33% 94%;
+
+    --popover: 163 41% 10%;
+    --popover-foreground: 42 33% 94%;
+
+    /* Brand Primary in Dark: Base Green HSL(144, 79%, 38%) */
+    --primary: 143.6 79.5% 38.2%;      /* #14AF51 */
+    --primary-foreground: 163 47% 6%;   /* #081612 */
+    --primary-hover: 143.6 79.5% 31.2%; /* #108F42 */
+
+    /* Brand Secondary: Green #14AF51 */
+    --secondary: 143.6 79.5% 38.2%;    /* #14AF51 */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 163 39% 14%;              /* #153028 */
+    --muted-foreground: 42 20% 70%;
+
+    --accent: 143.6 79.5% 38.2%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 163 30% 18%;
+    --input: 163 30% 18%;
+    --ring: 143.6 79.5% 38.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  html,
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    @apply antialiased selection:bg-brand-500 selection:text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    transition: background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                color 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Smooth Theme Switch Transitions for Structural Elements */
+  header,
+  nav,
+  main,
+  footer {
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+  }
+}
+
+/* Global Dark Mode Editorial Overrides */
+html.dark .bg-cream { background-color: #081612 !important; }
+html.dark .bg-white { background-color: #0F241E !important; }
+html.dark .bg-white\/60 { background-color: rgba(15, 36, 30, 0.72) !important; }
+html.dark .bg-white\/85 { background-color: rgba(15, 36, 30, 0.88) !important; }
+html.dark .bg-white\/95 { background-color: rgba(15, 36, 30, 0.96) !important; }
+html.dark .text-forest-900 { color: #F5F2EB !important; }
+html.dark .text-forest-900\/75 { color: rgba(245, 242, 235, 0.8) !important; }
+html.dark .text-forest-900\/70 { color: rgba(245, 242, 235, 0.72) !important; }
+html.dark .text-forest-800\/85,
+html.dark .text-forest-800\/80,
+html.dark .text-forest-800\/75,
+html.dark .text-forest-800\/70,
+html.dark .text-forest-800\/65,
+html.dark .text-forest-800\/60,
+html.dark .text-forest-800\/50,
+html.dark .text-forest-800\/45 { color: rgba(245, 242, 235, 0.76) !important; }
+html.dark .border-forest-900\/15,
+html.dark .border-forest-900\/10,
+html.dark .border-forest-900\/5 { border-color: rgba(250, 248, 245, 0.14) !important; }
+html.dark .bg-forest-900\/10 { background-color: rgba(250, 248, 245, 0.12) !important; }
+html.dark .bg-terracotta-50 { background-color: rgba(224, 90, 71, 0.18) !important; }
+html.dark .bg-emerald-50 { background-color: rgba(16, 185, 129, 0.16) !important; }
+html.dark .text-emerald-700 { color: #6EE7B7 !important; }
+html.dark .shadow-card,
+html.dark .shadow-soft { box-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.6) !important; }
+
+/* Dark Mode Input Placeholders, Selects & Form Text */
+html.dark input,
+html.dark textarea,
+html.dark select {
+  color: #F5F2EB !important;
+}
+html.dark input::placeholder,
+html.dark textarea::placeholder,
+html.dark .placeholder-forest-800\/40::placeholder {
+  color: rgba(245, 242, 235, 0.52) !important;
+  opacity: 1 !important;
+}
+html.dark select option {
+  background-color: #0F241E;
+  color: #F5F2EB;
+}
+
+/* Subtle WhatsApp Doodle Wallpaper Pattern */
+.wa-wallpaper {
+  background-color: #EFEAE2;
+  background-image: 
+    radial-gradient(rgba(15, 41, 34, 0.055) 1px, transparent 1px),
+    radial-gradient(rgba(7, 94, 84, 0.045) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: 0 0, 11px 11px;
+}
+html.dark .wa-wallpaper {
+  background-color: #0B141A;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(37, 211, 102, 0.03) 1px, transparent 1px);
+}
+
+/* Message Pop-In Animation */
+@keyframes waMsgIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.wa-msg-animate {
+  animation: waMsgIn 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* WhatsApp Typing Dots */
+@keyframes waBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+.wa-dot-1 { animation: waBounce 1.2s infinite 0s; }
+.wa-dot-2 { animation: waBounce 1.2s infinite 0.18s; }
+.wa-dot-3 { animation: waBounce 1.2s infinite 0.36s; }
+
+/* Custom subtle scrollbar inside chat */
+.wa-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.wa-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.wa-scroll::-webkit-scrollbar-thumb {
+  background: rgba(15, 41, 34, 0.18);
+  border-radius: 9999px;
+}
+
+/* Split-line mask helper for Hero Headline */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.line-inner {
+  display: block;
+  will-change: transform, opacity;
+}
+
+/* Interactive Physics Canvas Styling */
+#gravityOrbsCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+#gravityOrbsCanvas:active {
+  cursor: grabbing;
+}
+.physics-dot-bg {
+  background-color: #0F2922;
+  background-image: radial-gradient(rgba(250, 248, 245, 0.14) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Seamless Infinite Kinetic Marquee Ribbon */
+@keyframes marqueeGlider {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+.marquee-track-seamless {
+  display: flex;
+  width: max-content;
+  animation: marqueeGlider 30s linear infinite;
+  will-change: transform;
+}
+#kineticRibbonSection:hover .marquee-track-seamless {
+  animation-play-state: paused;
+}
+
+/* Giant Footer Watermark with Theme Terracotta Red Hover Fill */
+.footer-watermark-text {
+  font-size: clamp(4.2rem, 15.5vw, 15rem);
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(250, 248, 245, 0.16);
+  background-image: linear-gradient(180deg, #FF7461 0%, #E05A47 55%, #C94836 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+  background-position: bottom;
+  -webkit-background-clip: text;
+  background-clip: text;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background-size 0.8s cubic-bezier(0.22, 1, 0.36, 1), -webkit-text-stroke-color 0.45s ease, transform 0.6s ease;
+}
+.footer-watermark-text:hover {
+  background-size: 100% 100%;
+  -webkit-text-stroke-color: rgba(224, 90, 71, 0.55);
+  transform: translateY(-6px) scale(1.015);
+}
+
+/* Smooth FAQ Accordion & Solid Step Card Layering */
+.faq-answer-wrapper {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+}
+.journey-step {
+  background-color: #FFFFFF !important;
+  position: relative;
+  z-index: 20 !important;
+  isolation: isolate;
+}
+html.dark .journey-step {
+  background-color: #132B24 !important;
+}
+
+/* Custom Smooth Transitions */
+.smooth-hover {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* ======================================================== */
+/* JOSS CELESTIAL COSMIC THEME TRANSFORMATION SYSTEM       */
+/* ======================================================== */
+
+.theme-ripple-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2147483646; /* Sober upore: Highest possible 32-bit z-index */
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+/* 1. Core Origin Flash Burst (Instant Supernova Flare) */
+.theme-ripple-core-burst {
+  position: absolute;
+  left: var(--ripple-x, 40px);
+  top: var(--ripple-y, calc(100vh - 40px));
+  width: 52px;
+  height: 52px;
+  border-radius: 9999px;
+  transform: translate3d(-50%, -50%, 0) scale(0.4);
+  transform-origin: center center;
+  animation: ripple-core-flash 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  filter: blur(2px);
+}
+
+.theme-ripple-burst-dark {
+  background: radial-gradient(circle, rgba(224, 90, 71, 0.95) 0%, rgba(16, 185, 129, 0.6) 45%, transparent 100%);
+  box-shadow: 0 0 50px 25px rgba(224, 90, 71, 0.65);
+}
+
+.theme-ripple-burst-light {
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(245, 158, 11, 0.75) 55%, transparent 100%);
+  box-shadow: 0 0 50px 25px rgba(245, 158, 11, 0.65);
+}
+
+@keyframes ripple-core-flash {
+  0% {
+    transform: translate3d(-50%, -50%, 0) scale(0.4);
+    opacity: 1;
+  }
+  60% {
+    transform: translate3d(-50%, -50%, 0) scale(4);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(7);
+    opacity: 0;
+  }
+}
+
+/* 2. Radiant Expanding Shockwave Halo Ring */
+.theme-ripple-shockwave {
+  position: absolute;
+  left: var(--ripple-x, 40px);
+  top: var(--ripple-y, calc(100vh - 40px));
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  transform: translate3d(-50%, -50%, 0) scale(0);
+  transform-origin: center center;
+  animation: ripple-shockwave-expand 1.35s cubic-bezier(0.15, 0.9, 0.25, 1) forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.theme-ripple-shockwave-dark {
+  border: 2px solid rgba(224, 90, 71, 0.85);
+  box-shadow: 0 0 70px 25px rgba(224, 90, 71, 0.45), inset 0 0 45px rgba(16, 185, 129, 0.35);
+}
+
+.theme-ripple-shockwave-light {
+  border: 2px solid rgba(245, 158, 11, 0.9);
+  box-shadow: 0 0 80px 30px rgba(245, 158, 11, 0.45), inset 0 0 50px rgba(254, 243, 199, 0.6);
+}
+
+@keyframes ripple-shockwave-expand {
+  0% {
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    opacity: 1;
+  }
+  65% {
+    transform: translate3d(-50%, -50%, 0) scale(78);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(85);
+    opacity: 0;
+  }
+}
+
+/* 3. Primary Celestial Radial Gradient Spherical Wave */
+.theme-ripple-wave {
+  position: absolute;
+  left: var(--ripple-x, 40px);
+  top: var(--ripple-y, calc(100vh - 40px));
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  transform: translate3d(-50%, -50%, 0) scale(0);
+  transform-origin: center center;
+  animation: bubble-expand-gpu 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.theme-ripple-wave-dark {
+  background: radial-gradient(circle at center, #163A30 0%, #0F241E 32%, #081612 70%, #050E0B 100%);
+  box-shadow: 0 0 80px 25px rgba(8, 22, 18, 0.85);
+}
+
+.theme-ripple-wave-light {
+  background: radial-gradient(circle at center, #FFFFFF 0%, #FAF8F5 45%, #F4EFEA 80%, #EDE6DC 100%);
+  box-shadow: 0 0 80px 25px rgba(250, 248, 245, 0.85);
+}
+
+@keyframes bubble-expand-gpu {
+  0% {
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    opacity: 1;
+  }
+  75% {
+    transform: translate3d(-50%, -50%, 0) scale(75);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(75);
+    opacity: 0;
+  }
+}
+
+/* 4. Cinematic Brand Text Reveal (MentorLagbe Holographic Pill) */
+.theme-ripple-text-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.theme-ripple-text-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: theme-text-cinematic 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+}
+
+.theme-ripple-text-dark {
+  background: rgba(15, 36, 30, 0.78);
+  border: 1px solid rgba(224, 90, 71, 0.4);
+  color: #F5F2EB;
+}
+
+.theme-ripple-text-light {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(15, 41, 34, 0.18);
+  color: #0F2922;
+}
+
+.theme-ripple-brand-title {
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: theme-title-shine 1.2s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .theme-ripple-brand-title {
+    font-size: 2.75rem;
+  }
+}
+
+.theme-ripple-text-dark .theme-ripple-brand-title {
+  background-image: linear-gradient(135deg, #FAF8F5 0%, #E05A47 35%, #10B981 70%, #FAF8F5 100%);
+  filter: drop-shadow(0 0 16px rgba(224, 90, 71, 0.5));
+}
+
+.theme-ripple-text-light .theme-ripple-brand-title {
+  background-image: linear-gradient(135deg, #0F2922 0%, #E05A47 35%, #D97706 70%, #0F2922 100%);
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.35));
+}
+
+@keyframes theme-text-cinematic {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.82);
+    filter: blur(12px);
+  }
+  22% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0px);
+  }
+  72% {
+    opacity: 1;
+    transform: translate3d(0, -3px, 0) scale(1.02);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -22px, 0) scale(1.08);
+    filter: blur(8px);
+  }
+}
+
+@keyframes theme-title-shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ======================================================== */
+/* EDITORIAL SKELETON LOADING & SHIMMER SYSTEM              */
+/* Crisp, hardware-accelerated warm cream / forest shimmer  */
+/* ======================================================== */
+@keyframes editorial-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.editorial-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial-shimmer::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(250, 248, 245, 0.45) 20%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(250, 248, 245, 0.45) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: editorial-shimmer 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  content: '';
+  pointer-events: none;
+}
+
+html.dark .editorial-shimmer::after {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.04) 20%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.04) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
