@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="MentorLagbe icon">
+  <rect width="256" height="256" fill="#14AF51"/>
+
+  <!-- Graduation cap -->
+  <path d="M128 48 L216 88 L128 128 L40 88 Z" fill="#FFFFFF"/>
+  <path d="M84 106 L84 136 C84 136 103 156 128 156 C153 156 172 136 172 136 L172 106 L128 126 Z" fill="#FFFFFF"/>
+  <path d="M216 88 L216 150" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="216" cy="160" r="9" fill="#FFFFFF"/>
+
+  <!-- Open book -->
+  <path d="M34 178 C70 162 100 166 128 182 C156 166 186 162 222 178 L222 220 C186 204 156 208 128 224 C100 208 70 204 34 220 Z" fill="#FFFFFF"/>
+  <path d="M128 182 L128 224" stroke="#14AF51" stroke-width="9"/>
+</svg>
