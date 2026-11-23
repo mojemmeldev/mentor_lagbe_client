@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Logo from './Logo';
 import {
   Mail,
   PhoneCall,
   MapPin,
-  HeartHandshake,
   Globe,
   MessageCircle,
   GraduationCap,
@@ -45,8 +45,7 @@ export const Footer: React.FC = () => {
               Dhaka and Online Mentorship Hub
             </div>
             <h3 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-              Get First Word on New Batches from{' '}
-              <span className="italic text-brand-500">BUET, DMC &amp; DU</span> Mentors.
+              Find the Right Mentor for Your Goals
             </h3>
           </div>
 
@@ -64,11 +63,10 @@ export const Footer: React.FC = () => {
             </div>
             <button
               type="submit"
-              className={`px-6 py-3.5 rounded-2xl text-white font-bold text-sm transition-all shadow-[0_12px_30px_-6px_rgba(20,175,81,0.35)] shrink-0 flex items-center justify-center gap-2 ${
-                subscribed
+              className={`px-6 py-3.5 rounded-2xl text-white font-bold text-sm transition-all shadow-[0_12px_30px_-6px_rgba(20,175,81,0.35)] shrink-0 flex items-center justify-center gap-2 ${subscribed
                   ? 'bg-brand-600 hover:bg-emerald-700'
                   : 'bg-brand-500 hover:bg-brand-600'
-              }`}
+                }`}
             >
               {subscribed ? (
                 <>
@@ -86,17 +84,9 @@ export const Footer: React.FC = () => {
         <div className="pointer-events-auto grid sm:grid-cols-2 lg:grid-cols-12 gap-10 py-14 border-b border-white/10">
           {/* Brand & Mission Column */}
           <div className="lg:col-span-4 space-y-4">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-brand-500 text-white flex items-center justify-center transition-transform group-hover:scale-105">
-                <HeartHandshake className="w-5 h-5" />
-              </div>
-              <span className="font-serif font-bold text-2xl text-white">
-                Mentor<span className="text-brand-500">Lagbe</span>
-              </span>
-            </Link>
+            <Logo variant="white" size="md" />
             <p className="text-sm text-white/70 leading-relaxed max-w-sm">
-              A trusted mentoring hub in Bangladesh for focused 1-on-1 guidance and small-group batches, with no middleman fees.
-            </p>
+              Connect directly with mentors across Bangladesh for personalized one-on-one guidance and small-group learning, with zero middleman fees.            </p>
             <div className="flex items-center gap-3 pt-2">
               <a
                 href="https://x.com/MentorLagbe"

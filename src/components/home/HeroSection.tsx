@@ -135,11 +135,7 @@ export const HeroSection: React.FC = () => {
                   alt="Mentor"
                   className="w-11 h-11 rounded-full border-2 border-white dark:border-[#0F241E] object-cover"
                 />
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80"
-                  alt="Mentor"
-                  className="w-11 h-11 rounded-full border-2 border-white dark:border-[#0F241E] object-cover"
-                />
+                
                 <div className="w-11 h-11 rounded-full border-2 border-white dark:border-[#0F241E] bg-brand-500 text-white text-xs font-bold flex items-center justify-center">
                   1.5k+
                 </div>

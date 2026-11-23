@@ -14,16 +14,7 @@ const testimonials = [
     initials: 'TR',
     badgeBg: 'bg-forest-900 text-white',
   },
-  {
-    name: 'Dr. Nusrat Jahan',
-    role: 'Medical Mentor • DMC',
-    quote:
-      'Handling applications is simple, and the students are genuinely motivated. With no agency commission, I can put all my energy into teaching.',
-    avatarType: 'image',
-    imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80',
-    initials: 'NJ',
-    badgeBg: 'bg-forest-700 text-white',
-  },
+
   {
     name: 'Farzana Akter',
     role: 'Parent • Uttara, Dhaka',
