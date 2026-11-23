@@ -43,35 +43,12 @@ export const HeroSection: React.FC = () => {
               id="heroHeadline"
               className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-bold text-forest-900 dark:text-[#F5F2EB] leading-[1.12] tracking-tight"
             >
-              <span className="line-mask"><span className="line-inner">Find a Mentor Who Fits</span></span>
-              <span className="line-mask">
-                <span className="line-inner">
-                  or a{' '}
-                  <span className="italic text-brand-500 relative inline-block">
-                    Small Group Batch
-                    <svg
-                      className="absolute -bottom-2 left-0 w-full h-3 text-brand-500/60"
-                      viewBox="0 0 200 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2 9.5C55 2.5 145 2.5 198 9.5"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>
-                </span>
-              </span>
-              <span className="line-mask"><span className="line-inner">That Helps You Grow.</span></span>
+              Find the Right Mentor for Your Goals
             </h1>
 
             {/* Subtitle */}
             <p className="hero-subtitle text-base sm:text-lg text-forest-800/80 dark:text-[#F5F2EB]/80 max-w-xl leading-relaxed font-medium">
-              Learn from vetted mentors at{' '}
-              <strong className="text-brand-700 dark:text-brand-100">BUET, DMC &amp; DU</strong>. Choose private 1-on-1 coaching or a small batch, with your fee going straight to the tutor.
+              Explore mentor profiles by subject and find one who fits what you want to learn.
             </p>
 
             {/* Interactive Search Dock → Browse Tuitions */}
